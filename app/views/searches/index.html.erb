@@ -1,0 +1,9 @@
+<h1>Search</h1>
+
+<%= form_with url: "", method: :get do |form| %>
+  <%= form.search_field :query %>
+<% end %>
+
+<% current_user.recent_searches.elements.each do |query| %>
+  <%= link_to query, root_path(query: query) %>
+<% end %>
